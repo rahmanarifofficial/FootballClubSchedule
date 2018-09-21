@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import com.rahmanarif.footballclubschedule.R
+import com.rahmanarif.footballclubschedule.fragment.NextFragment
+import com.rahmanarif.footballclubschedule.fragment.PreviousFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 

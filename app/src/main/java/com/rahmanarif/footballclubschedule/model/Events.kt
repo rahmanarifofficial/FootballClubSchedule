@@ -6,6 +6,12 @@ data class Events(
         @SerializedName("idEvent")
         var eventId: String? = null,
 
+        @SerializedName("idHomeTeam")
+        var homeTeamId: String? = null,
+
+        @SerializedName("idAwayTeam")
+        var awayTeamId: String? = null,
+
         @SerializedName("strEvent")
         var event: String? = null,
 

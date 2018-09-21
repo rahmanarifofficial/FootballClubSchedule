@@ -1,8 +1,9 @@
-package com.rahmanarif.footballclubschedule.main
+package com.rahmanarif.footballclubschedule.presenter
 
 import com.google.gson.Gson
 import com.rahmanarif.footballclubschedule.api.ApiRepository
 import com.rahmanarif.footballclubschedule.api.TheSportDBApi
+import com.rahmanarif.footballclubschedule.main.FragmentView
 import com.rahmanarif.footballclubschedule.model.EventsResponse
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -26,7 +27,7 @@ class FragmentPresenter(private val view: FragmentView,
     }
 
     fun getNextEventsList(){
-//        view.showLoading()
+        view.showLoading()
         doAsync {
             val data = gson.fromJson(apiRepository
                     .doRequest(TheSportDBApi.getNextEvents()),
@@ -34,7 +35,7 @@ class FragmentPresenter(private val view: FragmentView,
             )
 
             uiThread {
-//                view.hideLoading()
+                view.hideLoading()
                 view.showNextEvents(data.events)
             }
         }
