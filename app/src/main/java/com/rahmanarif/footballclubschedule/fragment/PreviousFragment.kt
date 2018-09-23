@@ -13,12 +13,12 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import com.google.gson.Gson
 import com.rahmanarif.footballclubschedule.R
+import com.rahmanarif.footballclubschedule.adapter.EventListAdapter
 import com.rahmanarif.footballclubschedule.api.ApiRepository
 import com.rahmanarif.footballclubschedule.main.DetailActivity
-import com.rahmanarif.footballclubschedule.adapter.EventListAdapter
-import com.rahmanarif.footballclubschedule.presenter.FragmentPresenter
 import com.rahmanarif.footballclubschedule.main.FragmentView
 import com.rahmanarif.footballclubschedule.model.Events
+import com.rahmanarif.footballclubschedule.presenter.FragmentPresenter
 import com.rahmanarif.footballclubschedule.util.invisible
 import com.rahmanarif.footballclubschedule.util.visible
 import org.jetbrains.anko.startActivity
@@ -44,8 +44,7 @@ class PreviousFragment : Fragment(), FragmentView {
         eventList.layoutManager = LinearLayoutManager(activity)
 
         adapter = EventListAdapter(events) {
-            activity?.startActivity<DetailActivity>("idHomeTeam" to "${it.homeTeamId}",
-                    "idAwayTeam" to "${it.awayTeamId}")
+            activity?.startActivity<DetailActivity>("idEvent" to "${it.eventId}")
         }
         eventList.adapter = adapter
         progressBar = rootView.findViewById(R.id.progressBar) as ProgressBar
