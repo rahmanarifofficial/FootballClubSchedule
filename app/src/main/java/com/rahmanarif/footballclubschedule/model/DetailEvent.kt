@@ -46,6 +46,8 @@ data class DetailEvent (
     var awayRedCards: String? = null,
 
     @SerializedName("strAwayYellowCards")
-    var awayYellowCards: String? = null
+    var awayYellowCards: String? = null,
 
+    @SerializedName("dateEvent")
+    var dateEvent: String? = null
     )

@@ -1,6 +1,6 @@
 package com.rahmanarif.footballclubschedule.fragment
 
-import android.content.Context
+import  android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -58,7 +58,6 @@ class NextFragment : Fragment(), FragmentView {
         swipeRefresh.onRefresh {
             presenter.getNextEventsList()
         }
-
 
         return rootView
     }
