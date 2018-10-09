@@ -78,6 +78,8 @@ class DetailActivity : AppCompatActivity(), DetailView {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(detail_menu, menu)
         menuItem = menu
+        favoriteState()
+        setFavorite()
         return true
     }
 
@@ -109,8 +111,8 @@ class DetailActivity : AppCompatActivity(), DetailView {
                 insert(Favorite.TABLE_FAVORITE,
                         Favorite.EVENT_ID to events.eventId,
                         Favorite.HOMETEAM_ID to events.homeTeamId,
-                        Favorite.AWAYTEAM_ID to events.awayTeamId,
                         Favorite.HOMETEAM to events.homeTeam,
+                        Favorite.AWAYTEAM_ID to events.awayTeamId,
                         Favorite.AWAYTEAM to events.awayTeam,
                         Favorite.HOMESCORE to events.homeScore,
                         Favorite.AWAYSCORE to events.awayScore,
@@ -154,6 +156,7 @@ class DetailActivity : AppCompatActivity(), DetailView {
             val favorite = result.parseList(classParser<Favorite>())
             if (!favorite.isEmpty()) isFavorite = true
         }
+
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
