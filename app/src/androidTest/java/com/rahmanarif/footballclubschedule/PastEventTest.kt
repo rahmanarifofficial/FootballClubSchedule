@@ -6,7 +6,8 @@ import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.contrib.RecyclerViewActions
-import android.support.test.espresso.matcher.ViewMatchers.*
+import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
+import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import android.support.v7.widget.RecyclerView
@@ -42,11 +43,7 @@ class PastEventTest {
             e.printStackTrace()
         }
 
-        // Test bahwa terdapat test "Watford" di activity yg sedang tampil
-        onView(withText("Watford")).check(ViewAssertions.matches(isDisplayed()))
-
-        // Test bahwa terdapat test "Bournemouth" di activiy yang sedang tampil
-        onView(withText("Bournemouth")).check(ViewAssertions.matches(isDisplayed()))
+        pressBack()
     }
 
     @Test
